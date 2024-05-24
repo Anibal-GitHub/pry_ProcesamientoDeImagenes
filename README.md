@@ -4,43 +4,6 @@
 
 Este proyecto aborda la clasificación de imágenes de flores utilizando dos enfoques: Redes Neuronales Convolucionales (CNN) y Support Vector Machines (SVM). Se explora el preprocesamiento de datos, el entrenamiento de modelos y la evaluación de rendimiento en la clasificación de diferentes especies de flores.
 
-## Estructura del Proyecto
-
-flowervision/
-├── data/
-│ ├── flower_photos/
-│ │ ├── train/
-│ │ │ ├── roses/
-│ │ │ ├── sunflowers/
-│ │ │ ├── daisy/
-│ │ │ ├── tulips/
-│ │ │ └── lilies/
-│ │ ├── val/
-│ │ │ ├── roses/
-│ │ │ ├── ...
-│ │ └── test/
-│ │ ├── roses/
-│ │ ├── ...
-│ └── data_utils.py
-│
-├── models/
-│ ├── cnn_model.py
-│ └── svm_model.pkl
-│
-├── training/
-│ ├── train.py
-│ └── ...
-│
-├── evaluation/
-│ ├── evaluate.py
-│ └── ...
-│
-├── visualization/
-│ ├── visualize.py
-│ └── ...
-│
-├── requirements.txt
-└── README.md
 
 ### Descripción de la Estructura
 

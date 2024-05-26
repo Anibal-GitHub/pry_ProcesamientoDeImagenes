@@ -1,98 +1,48 @@
-# Sistema de Clasificación de Flores Utilizando Redes Neuronales Convolucionales (CNN) y SVM
+# Sistema de Clasificación de Flores con Redes Neuronales Convolucionales y Máquinas de Vectores de Soporte
 
-## Descripción del Proyecto
+Este proyecto tiene como objetivo desarrollar un sistema de clasificación de imágenes de flores utilizando redes neuronales convolucionales (CNN) y máquinas de vectores de soporte (SVM). El sistema está diseñado para identificar y clasificar imágenes de cinco tipos de flores: rosas, girasoles, margaritas, tulipanes y lirios.
 
-Este proyecto aborda la clasificación de imágenes de flores utilizando dos enfoques: Redes Neuronales Convolucionales (CNN) y Support Vector Machines (SVM). Se explora el preprocesamiento de datos, el entrenamiento de modelos y la evaluación de rendimiento en la clasificación de diferentes especies de flores.
+## Conjunto de Datos
+
+Se utiliza el conjunto de datos de flores "Flower Photos" disponible públicamente en https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz. Este conjunto contiene aproximadamente 3.670 imágenes JPEG organizadas en directorios separados para entrenamiento, validación y prueba.
+
+## Metodología
+
+1. **Preprocesamiento de Datos**: Las imágenes se preprocesarán para mejorar su calidad y consistencia, aplicando técnicas como redimensionamiento, normalización y aumento de datos.
+
+2. **Diseño y Entrenamiento de la CNN**: Se diseñará una arquitectura de red neuronal convolucional adecuada para la tarea de clasificación. La red se entrenará con el conjunto de datos preprocesado, y se optimizarán los hiperparámetros para maximizar la precisión y eficiencia del modelo.
+
+3. **Entrenamiento del Modelo SVM**: Paralelamente, se entrenará un modelo SVM utilizando las características extraídas de las imágenes. Se evaluarán diferentes kernels y se ajustarán los parámetros del modelo para obtener el mejor rendimiento.
+
+4. **Evaluación del Rendimiento**: El rendimiento de ambos modelos entrenados se evaluará en un conjunto de datos de prueba independiente, calculando métricas como precisión, sensibilidad y especificidad para cada clase de flor.
+
+5. **Análisis de Resultados**: Se analizarán los resultados obtenidos para identificar fortalezas y debilidades del sistema, explorar posibles fuentes de error y proponer estrategias de mejora.
+
+## Instalación
+
+1. Clona este repositorio: `git clone https://github.com/tu-usuario/proyecto-clasificacion-flores.git`
+2. Instala las dependencias: `pip install -r requirements.txt`
+
+## Uso
+
+1. Descarga el conjunto de datos de flores desde el enlace proporcionado y colócalo en el directorio `data/`.
+2. Ejecuta el script principal: `python main.py`
+3. Sigue las instrucciones en la consola para entrenar el modelo, realizar predicciones o generar informes.
 
 ## Estructura del Proyecto
 
-flowervision/
-├── data/
-│ ├── flower_photos/
-│ │ ├── train/
-│ │ │ ├── roses/
-│ │ │ ├── sunflowers/
-│ │ │ ├── daisy/
-│ │ │ ├── tulips/
-│ │ │ └── lilies/
-│ │ ├── val/
-│ │ │ ├── roses/
-│ │ │ ├── ...
-│ │ └── test/
-│ │ ├── roses/
-│ │ ├── ...
-│ └── data_utils.py
-│
-├── models/
-│ ├── cnn_model.py
-│ └── svm_model.pkl
-│
-├── training/
-│ ├── train.py
-│ └── ...
-│
-├── evaluation/
-│ ├── evaluate.py
-│ └── ...
-│
-├── visualization/
-│ ├── visualize.py
-│ └── ...
-│
-├── requirements.txt
-└── README.md
+- `data/`: Directorio para el conjunto de datos.
+- `utils/`: Funciones y clases utilitarias.
+- `preprocessing/`: Scripts para el preprocesamiento de imágenes.
+- `models/`: Modelos de aprendizaje profundo y algoritmos de procesamiento de imágenes, incluyendo CNN y SVM.
+- `experiments/`: Scripts y cuadernos de Jupyter para experimentos y evaluación.
+- `visualization/`: Funciones y scripts para visualización de imágenes y resultados.
+- `requirements.txt`: Archivo con las dependencias del proyecto.
 
-### Descripción de la Estructura
+## Contribución
 
-- **data/**: Almacena el conjunto de datos de imágenes de flores (`flower_photos/`) y utilidades para el manejo de datos (`data_utils.py`).
-- **models/**: Contiene los modelos entrenados, incluyendo la CNN (`cnn_model.py`) y el SVM (`svm_model.pkl`).
-- **training/**: Scripts para el entrenamiento de los modelos (`train.py`).
-- **evaluation/**: Scripts para evaluar el rendimiento de los modelos (`evaluate.py`).
-- **visualization/**: Funciones para visualizar imágenes, resultados y métricas (`visualize.py`).
-- **requirements.txt**: Lista de dependencias del proyecto.
-- **README.md**: Este archivo, con la descripción del proyecto.
+Las contribuciones son bienvenidas. Por favor, crea un issue o envía una pull request con tus cambios propuestos.
 
-## Características Principales
+## Licencia
 
-- **Preprocesamiento de Imágenes**: Implementa técnicas de preprocesamiento utilizando Keras y tf.data para optimizar el entrenamiento.
-- **Entrenamiento CNN**: Entrena una red neuronal convolucional para la clasificación de flores.
-- **Clasificación SVM**: Utiliza un modelo SVM entrenado para predecir la clase de una flor a partir de características extraídas.
-- **Evaluación de Rendimiento**: Calcula métricas de rendimiento para evaluar la precisión del modelo.
-- **Visualización**: Permite visualizar las imágenes de prueba con las predicciones realizadas.
-
-## Requisitos
-
-- Python 3.6+
-- Jupyter Notebook
-- Bibliotecas:
-  - TensorFlow
-  - Keras
-  - opencv-python
-  - numpy
-  - scikit-learn
-  - joblib
-  - matplotlib
-  - PIL
-
-## Instrucciones de Uso
-
-1. Clonar el repositorio:
-    ```sh
-    git clone https://github.com/tu_usuario/flowervision.git
-    ```
-2. Instalar las dependencias:
-    ```sh
-    pip install -r requirements.txt
-    ```
-3. Descargar el conjunto de datos de imágenes de flores y colocarlo en la carpeta `data/flower_photos/`.
-4. Ejecutar el Jupyter Notebook `flower_classification.ipynb` para entrenar los modelos, evaluar su rendimiento y visualizar las predicciones.
-
-## Próximos Pasos
-
-- **Optimización de Hiperparámetros**: Ajustar los hiperparámetros de la CNN y el SVM para mejorar la precisión.
-- **Entrenamiento con Conjuntos de Datos Más Grandes**: Explorar el uso de conjuntos de datos más extensos para mejorar la capacidad de generalización del modelo.
-- **Implementación de Nuevas Arquitecturas**: Investigar y probar arquitecturas de CNN más avanzadas para mejorar el rendimiento.
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Si encuentras algún error o quieres sugerir mejoras, por favor, abre un issue o envía un pull request.
+Este proyecto está licenciado bajo la [MIT License](LICENSE).

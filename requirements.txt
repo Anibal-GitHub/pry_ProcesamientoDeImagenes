@@ -1,0 +1,18 @@
+# Bibliotecas básicas
+numpy
+pandas
+
+# Procesamiento de imágenes
+pillow
+scikit-image
+
+# Aprendizaje Profundo
+tensorflow
+keras
+
+# Visualización
+matplotlib
+seaborn
+
+# Otras utilidades
+tqdm
